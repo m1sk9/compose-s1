@@ -29,15 +29,9 @@ jobs:
           script: |
             cd compose
             git pull origin main
-            find . -type f -name "compose.yaml" | while read -r compose_file; do
-                dir=$(dirname "$compose_file")
-                echo "Executing in directory: $dir"
-
-                (cd "$dir" && docker compose up -d --force-recreate --build)
-
-                if [ $? -eq 0 ]; then
-                    echo "Success: $dir"
-                else
-                    echo "Failed: $dir"
-                fi
-            done
+            for dir in (find . -name 'compose.yaml' -exec dirname {} \;)
+                echo "Running docker compose in $dir"
+                cd $dir
+                docker compose up -d --force-recreate --build
+                cd -
+            end
