@@ -10,5 +10,5 @@ services:
       - TZ=Asia/Tokyo
     ports:
       - "8080:80"
-    user: "compose-user:compose-user"
+    user: "1002:1002"
     restart: always
