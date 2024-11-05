@@ -1,0 +1,14 @@
+services:
+  app:
+    image: filebrowser/filebrowser:v2.31.2-s6
+    container_name: filebrowser-compose-s1
+    volumes:
+      - /home:/srv
+      - /home/filebrowser-compose-s1-data/database.db:/database.db
+      - /home/filebrowser-compose-s1-data/.filebrowser.json:/.filebrowser.json
+    environment:
+      - TZ=Asia/Tokyo
+    ports:
+      - "8080:80"
+    user: "${UID}:${GID}"
+    restart: always

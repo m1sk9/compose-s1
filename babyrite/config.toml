@@ -1,0 +1,5 @@
+### babyrite configuration ###
+logger_format='compact'
+
+[preview]
+is_mention=true
