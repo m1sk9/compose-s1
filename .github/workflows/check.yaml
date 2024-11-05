@@ -19,7 +19,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Check compose files
-        runs: |
+        run: |
           find . -type f -name "compose.yaml" | while read -r compose_file; do
             dir=$(dirname "$compose_file")
             echo "Executing 'docker compose config' in directory: $dir"
