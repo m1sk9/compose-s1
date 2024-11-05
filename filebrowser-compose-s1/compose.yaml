@@ -3,9 +3,9 @@ services:
     image: filebrowser/filebrowser:v2.31.2-s6
     container_name: filebrowser-compose-s1
     volumes:
-      - /home:/srv
-      - /home/filebrowser-compose-s1-data/database.db:/database.db
-      - /home/filebrowser-compose-s1-data/.filebrowser.json:/.filebrowser.json
+      - /home/compose-user:/srv
+      - /home/compose-user/filebrowser-compose-s1-data/database.db:/database.db
+      - /home/compose-user/filebrowser-compose-s1-data/.filebrowser.json:/.filebrowser.json
     environment:
       - TZ=Asia/Tokyo
     ports:

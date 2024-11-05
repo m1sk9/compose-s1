@@ -3,10 +3,10 @@ services:
     image: jvmilazz0/kavita:0.8.3
     container_name: kavita-s1
     volumes:
-      - /home/kavita-s1-data/data:/kavita/config
-      - /home/kavita-s1-data/comics:/comics
-      - /home/kavita-s1-data/books:/books
-      - /home/kavita-s1-data/illust/:/illust
+      - /home/compose-user/kavita-s1-data/data:/kavita/config
+      - /home/compose-user/kavita-s1-data/comics:/comics
+      - /home/compose-user/kavita-s1-data/books:/books
+      - /home/compose-user/kavita-s1-data/illust/:/illust
     environment:
       - TZ=Asia/Tokyo
     ports:
