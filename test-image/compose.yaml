@@ -1,0 +1,9 @@
+services:
+  app:
+    image: debian:latest
+    command:
+      - bash
+      - -c
+      - while true; do echo "$$(date) - hello!"; sleep 30; done
+    environment:
+      - TZ=Asia/Tokyo
