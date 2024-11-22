@@ -20,7 +20,7 @@ jobs:
           tags: tag:ci
 
       - name: Deploy compose to dev-m1sk9-s1
-        uses: appleboy/ssh-action@v1.1.0
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
