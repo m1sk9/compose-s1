@@ -9,6 +9,24 @@ on:
       - main
 
 jobs:
+  test-tailscale:
+    name: Test Tailscale connectivity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Tailscale
+        uses: tailscale/github-action@v2
+        with:
+          oauth-client-id: ${{ secrets.TAILSCALE_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TAILSCALE_OAUTH_SECRET }}
+          tags: tag:ci
+
+      - name: Test Tailscale connectivity
+        run: |
+          tailscale ping --verbose --timeout 10s --c 5 --until-direct=false dev-m1sk9-s1
+
   test-compose:
     name: Test compose files
     runs-on: ubuntu-latest
