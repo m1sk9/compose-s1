@@ -1,0 +1,10 @@
+services:
+  vw:
+    image: vaultwarden/server:1.33.2
+    container_name: vaultwarden
+    restart: unless-stopped
+    volumes:
+      - ./home/m1sk9/vw-data/:/data/
+    # Vaultwarden は Tailscale 上で展開される Tailnet に接続しないと使用できないようにしている
+    ports:
+      - 127.0.0.1:8080:80
