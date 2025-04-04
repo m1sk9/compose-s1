@@ -5,8 +5,8 @@ services:
     restart: unless-stopped
     volumes:
       - /home/m1sk9/:/srv/
-      - /home/m1sk9/fb-data/database.db:/database.db/
-      - /home/m1sk9/fb-data/.filebrowser.json:/.filebrowser.json/
+      - /home/m1sk9/fb-data/database.db:/database.db
+      - /home/m1sk9/fb-data/.filebrowser.json:/.filebrowser.json
     user: "${UID}:${GID}"
     ports:
       - 127.0.0.1:8081:80
