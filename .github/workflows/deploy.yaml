@@ -21,7 +21,8 @@ jobs:
           tags: tag:ci
 
       - name: Deploy compose
-        uses: appleboy/ssh-action@v1.2.2
+        # https://github.com/appleboy/ssh-action/commit/2b3c6504b3e1405c32b38787b6d20b223a1ecebc
+        uses: appleboy/ssh-action@2b3c6504b3e1405c32b38787b6d20b223a1ecebc # v1.2.2
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
