@@ -22,7 +22,7 @@ jobs:
 
       - name: Deploy compose
         # https://github.com/appleboy/ssh-action/commit/2b3c6504b3e1405c32b38787b6d20b223a1ecebc
-        uses: appleboy/ssh-action@2b3c6504b3e1405c32b38787b6d20b223a1ecebc # v1.2.2
+        uses: appleboy/ssh-action@2ead5e36573f08b82fbfce1504f1a4b05a647c6f # v1.2.2
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
